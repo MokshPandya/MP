@@ -1,0 +1,331 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #f5efe6;
+  color: #333;
+}
+/* Top Banner */
+.top-banner {
+  height: 180px; /* fixed height, adjust as needed */
+  text-align: center;
+  padding: 20px 15px 0; /* adjust top padding to vertically align text */
+  background-color: #f5efe6;
+  font-family: 'Dancing Script', cursive;
+  color: #000000;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertically center all content */
+  overflow: hidden; /* prevent overflow if text is too big */
+}
+
+/* Text styles remain free to change */
+.top-banner h1 {
+  font-size: 3.2rem;
+  margin: 0 0 10px 0;
+  line-height: 1.1;
+}
+.top-banner h2 {
+  font-size: 2rem;
+  margin: 0 0 10px 0;
+  line-height: 1.2;
+}
+.top-banner h3 {
+  font-size: 1.3rem;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+}
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+/* Zigzag Sections */
+.zigzag-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 100px auto;
+  padding: 0 20px;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 1s ease-out;
+}
+.zigzag-item img {
+  width: 40%;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+.zigzag-item .text {
+  width: 40%;
+}
+.zigzag-item.reverse {
+  flex-direction: row-reverse;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Countdown */
+.countdown {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  font-family: 'Playfair Display', serif;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.countdown div {
+  text-align: center;
+}
+.countdown span {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.countdown label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: #666;
+}
+
+/* Footer */
+/* Footer */
+footer {
+  position: relative;  /* default but good to keep */
+  margin: 0 20px;      /* remove big vertical margin */
+  padding: 40px 20px 30px; /* generous top & bottom padding */
+  text-align: center;
+  color: #000;
+  border-top: 1px solid #eee;
+  box-shadow: #000;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  min-height: 100px;   /* ensure some visible footer height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* center content vertically */
+  box-sizing: border-box;
+}
+
+footer p {
+  margin: 0.3em 0;
+}
+
+/* Signature Note */
+.signature-note {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  color: #b9475e;
+  opacity: 0.9;
+  margin-top: 10px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.signature-note:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .zigzag-item,
+  .zigzag-item.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+  .zigzag-item img,
+  .zigzag-item .text {
+    width: 100%;
+  }
+  .countdown {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+
+/* Timeline wrapper should match zigzag text width */
+.timeline-wrapper {
+  position: relative;
+  width: 45%;
+  height: 500px;
+}
+
+#walker {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: url('assets/walker-icon.svg') no-repeat center center;
+  background-size: contain;
+  pointer-events: none;
+  transition: left 0.3s ease, top 0.3s ease;
+  will-change: transform;
+  z-index: 10;
+}
+
+/* Milestone points (invisible circle or icon) */
+.milestone-point {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: #b9475e;
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  transition: background-color 0.3s ease;
+}
+
+/* Highlight milestone on active */
+.milestone-point.active {
+  background-color: #ff4466;
+  box-shadow: 0 0 8px #ff4466;
+}
+
+/* Milestone text */
+.milestone-text {
+  position: absolute;
+  width: 180px;
+  align-items: center;
+  background: #fff;
+  color: #b9475e;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 6px;
+  padding: 10px 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 6px; 
+  align-items: center;
+}
+.milestone-point.milestone-long .milestone-text {
+  width: 220px;
+  top: -90px;             /* vertical position */
+  left: 50%;              /* start centered horizontally */
+  transform: translateX(calc(-50% + 20px)); /* move 20px right from center */
+}
+
+.milestone-text h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.2;
+  text-align: left;
+}
+.milestone-text p {
+  font-size: 0.9rem;
+  line-height: 1.3;
+  margin: 0;
+  text-align: left;
+}
+
+.popup {
+  position: absolute; /* So it floats on the page near the milestone */
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 280px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.popup h3 {
+  margin-top: 0;
+  font-size: 1.3rem;
+  color: #b9475e;
+}
+
+.popup p {
+  margin: 10px 0 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.popup .close-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #b9475e;
+  border: none;
+  background: transparent;
+  line-height: 1;
+}
+
+
+
+/* Show text when active */
+.milestone-point.active .milestone-text {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Optional: keep milestone text horizontally centered */
+.milestone-text {
+  left: 50%;
+  transform: translateX(-50%);
+  top: -60px; /* adjust vertical positioning */
+}
+
+/* Optional: Adjust text position per milestone if needed */
+.milestone-point[data-progress="0.0"] .milestone-text {
+  top: 30px;
+  left: 50%;
+}
+.milestone-point[data-progress="0.5"] .milestone-text {
+  top: -100px;
+  left: 60%;
+  transform: translateX(-60%);
+}
+.milestone-point[data-progress="1.0"] .milestone-text {
+  top: 30px;
+  left: 50%;
+}
+
+
+/* Responsive tweaks to keep zigzag consistent */
+@media (max-width: 768px) {
+  .zigzag-item,
+  .zigzag-item.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+  .zigzag-item img,
+  .timeline-wrapper {
+    width: 100%;
+    height: auto;
+  }
+}

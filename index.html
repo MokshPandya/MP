@@ -2,66 +2,56 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Save the Date – Nikhil & Pooja</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat&family=Dancing+Script&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Top Banner -->
   <header class="top-banner">
     <h1>Save the date</h1>
     <h2>Nikhil's & Pooja's Wedding</h2>
     <h3>02.07.2026</h3>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero">
     <video autoplay muted loop playsinline class="hero-video">
       <source src="assets/video.mp4" type="video/mp4" />
     </video>
   </section>
 
-  <!-- Section 1: Our Story -->
   <section class="zigzag-item fade-in walker-section">
     <img src="assets/image1.jpeg" alt="Our Story" />
-    
     <div class="timeline-wrapper">
       <svg id="timelineSVG" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet">
         <path id="timelinePath" d="M 50 450 C 300 0, 700 0, 950 450" fill="none" stroke="#b9475e" stroke-width="5" />
       </svg>
       <div id="walker"></div>
 
-      <!-- Milestone points visually on the path -->
       <div class="milestone-point" data-progress="0.0">
         <div class="milestone-text">
           <h2>When We Met</h2>
-          <p>14.03.2019 </p>
+          <p>14.03.2019</p>
           <p>Our story began</p>
         </div>
       </div>
-    
       <div class="milestone-point milestone-long" data-progress="0.5">
         <div class="milestone-text">
           <h2>The Engagement</h2>
-          <p>01.03.2024</p> 
+          <p>01.03.2024</p>
           <p>She Said Yes!</p>
         </div>
-      </div>      
-    
+      </div>
       <div class="milestone-point" data-progress="1.0">
         <div class="milestone-text">
-          <h2>The Wedding </h2>
+          <h2>The Wedding</h2>
           <p>02.07.2026</p>
           <p>Forever starts</p>
         </div>
       </div>
     </div>
-    
   </section>
-  
 
-  <!-- Section 2: Wedding Info -->
   <section class="zigzag-item reverse fade-in">
     <img src="assets/image2.jpeg" alt="Wedding Info">
     <div class="text">
@@ -70,7 +60,6 @@
     </div>
   </section>
 
-  <!-- Section 3: Countdown -->
   <section class="zigzag-item fade-in">
     <img src="assets/image3.jpeg" alt="Countdown">
     <div class="text">
@@ -90,6 +79,5 @@
   </footer>
 
   <script src="script.js"></script>
-  <div id="walker"></div>
 </body>
 </html>

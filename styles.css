@@ -1,339 +1,58 @@
-/* Global Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html, body {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
-  font-family: 'Montserrat', sans-serif;
-  background: #f5efe6;
-  color: #333;
-}
-
-/* Top Banner */
-.top-banner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 2rem 1rem 1rem;
-  background-color: #f5efe6;
-  font-family: 'Dancing Script', cursive;
-  color: #000;
-  border-bottom: 1px solid #eee;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-}
-
-.top-banner h1 {
-  font-size: clamp(2rem, 5vw, 3.2rem);
-  margin-bottom: 0.5rem;
-}
-
-.top-banner h2 {
-  font-size: clamp(1.5rem, 4vw, 2rem);
-  margin-bottom: 0.5rem;
-}
-
-.top-banner h3 {
-  font-size: clamp(1rem, 3vw, 1.3rem);
-}
-
-/* Hero Section */
-.hero {
-  position: relative;
-  height: 90vh;
-  max-height: 800px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
-}
-
-/* Zigzag Sections */
-.zigzag-item {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1100px;
-  margin: 6rem auto;
-  gap: 2rem;
-  opacity: 0;
-  transform: translateY(60px);
-  transition: all 1s ease-out;
-  padding: 0 1rem;
-}
-
-.zigzag-item img {
-  flex: 1 1 300px;
-  width: 100%;
-  max-width: 500px;
-  border-radius: 10px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
-}
-
-.zigzag-item .text {
-  flex: 1 1 300px;
-  max-width: 500px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.zigzag-item.reverse {
-  flex-direction: row-reverse;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Countdown */
-.countdown {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin: 40px auto 0;
-  font-family: 'Playfair Display', serif;
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  gap: 1rem;
-  max-width: 800px;
-  width: 90%;
-}
-
-.countdown div {
-  text-align: center;
-  min-width: 60px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.countdown span {
-  display: block;
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-
-.countdown label {
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  color: #666;
-}
-
-/* Footer */
-footer {
-  margin: 0 auto;
-  padding: 40px 20px 30px;
-  text-align: center;
-  color: #000;
-  border-top: 1px solid #eee;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  min-height: 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  max-width: 960px;
-}
-
-footer p {
-  margin: 0.3em 0;
-}
-
-.signature-note {
-  font-family: 'Dancing Script', cursive;
-  font-size: 2rem;
-  color: #b9475e;
-  opacity: 0.9;
-  margin-top: 10px;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.signature-note:hover {
-  opacity: 1;
-  transform: scale(1.05);
-}
-
-/* Timeline */
-.timeline-wrapper {
-  position: relative;
-  width: 90%;
-  max-width: 600px;
-  margin: 3rem auto;
-  aspect-ratio: 2 / 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#timelineSVG {
-  width: 100%;
-  height: 100%;
-}
-
-#walker {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  background: url('assets/walker-icon.svg') no-repeat center center;
-  background-size: contain;
-  pointer-events: none;
-  transition: left 0.3s ease, top 0.3s ease;
-  will-change: transform;
-  z-index: 10;
-}
-
-.milestone-point {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  background-color: #b9475e;
-  border-radius: 50%;
-  cursor: pointer;
-  transform: translate(-50%, -50%);
-  z-index: 5;
-  transition: background-color 0.3s ease;
-}
-
-.milestone-point.active {
-  background-color: #ff4466;
-  box-shadow: 0 0 8px #ff4466;
-}
-
-.milestone-text {
-  position: absolute;
-  background: #fff;
-  color: #b9475e;
-  font-family: 'Montserrat', sans-serif;
-  border-radius: 6px;
-  padding: 10px 15px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.5s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: max-content;
-  max-width: 90vw;
-  left: 50%;
-  transform: translateX(-50%);
-  top: -60px;
-  text-align: center;
-  z-index: 6;
-}
-
-.milestone-point.active .milestone-text {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.milestone-text h2 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin: 0;
-  line-height: 1.2;
-}
-
-.milestone-text p {
-  font-size: 0.9rem;
-  line-height: 1.3;
-  margin: 0;
-}
-
-/* Responsive Media Queries */
-@media (max-width: 1024px) {
-  .top-banner h1 {
-    font-size: 2.5rem;
-  }
-
-  .zigzag-item {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
 @media (max-width: 768px) {
-  .zigzag-item img,
-  .zigzag-item .text,
+  .hero {
+    height: 50vh;
+  }
+
   .timeline-wrapper {
-    width: 100%;
-  }
-
-  .countdown {
+    display: flex;
     flex-direction: column;
-    gap: 1rem;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+    aspect-ratio: auto;
+    position: static;
   }
 
-  .milestone-text {
-    top: 30px !important;
-    transform: translateX(-50%) translateY(0);
-    width: 90vw;
-    max-width: 95%;
-    font-size: 0.85rem;
-    padding: 10px;
-    text-align: center;
-  }
-
-  .milestone-text h2 {
-    font-size: 1rem;
-  }
-
-  .milestone-text p {
-    font-size: 0.85rem;
+  #timelineSVG,
+  #walker {
+    display: none;
   }
 
   .milestone-point {
-    width: 14px;
-    height: 14px;
+    position: static;
+    transform: none;
+    width: auto;
+    height: auto;
+    background: none;
+    box-shadow: none;
+    cursor: default;
   }
 
-  #walker {
-    width: 30px;
-    height: 30px;
+  .milestone-point.active {
+    background: none;
+    box-shadow: none;
   }
 
-  .timeline-wrapper {
-    aspect-ratio: auto;
-    padding-bottom: 2rem;
+  .milestone-text {
+    position: static;
+    opacity: 1 !important;
+    pointer-events: auto;
+    transform: none;
+    background: #fff;
+    padding: 1rem;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-left: 4px solid #b9475e;
+    border-radius: 8px;
   }
-}
 
-@media (max-width: 480px) {
-  .top-banner h1 {
-    font-size: 1.8rem;
+  .milestone-text h2 {
+    font-size: 1.1rem;
   }
 
-  .countdown span {
-    font-size: 2rem;
+  .milestone-text p {
+    font-size: 0.9rem;
   }
 }

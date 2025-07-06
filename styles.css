@@ -30,6 +30,20 @@ html, body {
   box-shadow: 0 4px 10px rgba(0,0,0,0.03);
 }
 
+.top-banner h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  margin-bottom: 0.5rem;
+}
+
+.top-banner h2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  margin-bottom: 0.5rem;
+}
+
+.top-banner h3 {
+  font-size: clamp(1rem, 3vw, 1.3rem);
+}
+
 /* Hero Section */
 .hero {
   position: relative;
@@ -69,6 +83,7 @@ html, body {
 
 .zigzag-item img {
   flex: 1 1 300px;
+  width: 100%;
   max-width: 500px;
   border-radius: 10px;
   box-shadow: 0 8px 30px rgba(0,0,0,0.2);
@@ -114,6 +129,18 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.countdown span {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.countdown label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: #666;
 }
 
 /* Footer */
@@ -204,7 +231,6 @@ footer p {
 
 .milestone-text {
   position: absolute;
-  width: 180px;
   background: #fff;
   color: #b9475e;
   font-family: 'Montserrat', sans-serif;
@@ -217,11 +243,13 @@ footer p {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: max-content;
+  max-width: 90vw;
   left: 50%;
   transform: translateX(-50%);
   top: -60px;
-  max-width: 90vw;
   text-align: center;
+  z-index: 6;
 }
 
 .milestone-point.active .milestone-text {
@@ -265,16 +293,44 @@ footer p {
     flex-direction: column;
     gap: 1rem;
   }
+
+  .milestone-text {
+    top: 30px !important;
+    transform: translateX(-50%) translateY(0);
+    width: 90vw;
+    max-width: 95%;
+    font-size: 0.85rem;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .milestone-text h2 {
+    font-size: 1rem;
+  }
+
+  .milestone-text p {
+    font-size: 0.85rem;
+  }
+
+  .milestone-point {
+    width: 14px;
+    height: 14px;
+  }
+
+  #walker {
+    width: 30px;
+    height: 30px;
+  }
+
+  .timeline-wrapper {
+    aspect-ratio: auto;
+    padding-bottom: 2rem;
+  }
 }
 
 @media (max-width: 480px) {
   .top-banner h1 {
     font-size: 1.8rem;
-  }
-
-  .milestone-text {
-    font-size: 0.85rem;
-    width: 90vw;
   }
 
   .countdown span {

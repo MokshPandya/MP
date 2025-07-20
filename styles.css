@@ -1,3 +1,214 @@
+/* Global Styles */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #333;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3rem;
+  color: #b9475e;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-top: 0.5rem;
+  color: #222;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: #666;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Header Banner */
+.top-banner {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: #eee0d9;
+  border-bottom: 1px solid #f0e0e2;
+}
+
+/* Hero Video */
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Zigzag Sections */
+.zigzag-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.zigzag-item img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.zigzag-item .text {
+  max-width: 600px;
+  text-align: center;
+}
+
+.zigzag-item .text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.zigzag-item.reverse {
+  flex-direction: column-reverse;
+}
+
+/* Timeline Section */
+.timeline-wrapper {
+  position: relative;
+  display: block;
+  padding: 4rem 2rem;
+}
+
+#timelineSVG {
+  width: 100%;
+  height: auto;
+}
+
+#walker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background: #b9475e;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.milestone-point {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  border: 3px solid #b9475e;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px #fff, 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.milestone-text {
+  position: absolute;
+  width: 250px;
+  background: #fff;
+  padding: 1rem;
+  border-left: 4px solid #b9475e;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transform: translate(-50%, -120%);
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.milestone-point.active .milestone-text {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Countdown Section */
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.countdown div {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.countdown span {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #b9475e;
+}
+
+.countdown label {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #fff3f5;
+  font-style: italic;
+}
+
+/* Responsive Styles */
+@media (min-width: 769px) {
+  .zigzag-item {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .zigzag-item.reverse {
+    flex-direction: row-reverse;
+  }
+
+  .zigzag-item .text {
+    text-align: left;
+  }
+}
+
 @media (max-width: 768px) {
   .hero {
     height: 50vh;
@@ -9,7 +220,6 @@
     align-items: center;
     gap: 1.5rem;
     padding: 2rem 1rem;
-    aspect-ratio: auto;
     position: static;
   }
 
@@ -54,5 +264,18 @@
 
   .milestone-text p {
     font-size: 0.9rem;
+  }
+
+  .countdown {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .countdown div {
+    padding: 1rem;
+  }
+
+  .countdown span {
+    font-size: 1.5rem;
   }
 }

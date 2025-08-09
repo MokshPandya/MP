@@ -1,79 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Save the Date – Nikhil & Pooja</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat&family=Dancing+Script&display=swap" rel="stylesheet">
 </head>
 <body>
   <header class="top-banner">
-    <h1>Save the date</h1>
-    <h2>Nikhil's & Pooja's Wedding</h2>
+    <h1>Save the Date</h1>
+    <h2>Nikhil & Pooja</h2>
     <h3>02.07.2026</h3>
   </header>
 
-  <section class="hero">
-    <video autoplay muted loop playsinline class="hero-video">
-      <source src="assets/video.mp4" type="video/mp4" />
-    </video>
-  </section>
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <video autoplay muted loop playsinline class="hero-video">
+        <source src="assets/video.mp4" type="video/mp4" />
+      </video>
+    </section>
 
-  <section class="zigzag-item fade-in walker-section">
-    <img src="assets/image1.jpeg" alt="Our Story" />
-
-    <div class="timeline-wrapper">
-      <svg id="timelineSVG" width="100%" height="300" viewBox="0 0 1000 300">
-        <path id="timelinePath" d="M 100 150 C 300 50, 700 250, 900 150" stroke="#ccc" fill="none" stroke-width="4" />
-      </svg>
-      <div id="walker"></div>
-    </div>
-
-    <div class="milestone-point" data-progress="0.0">
-      <div class="milestone-text">
-        <h2>When We Met</h2>
-        <p>14.03.2019</p>
-        <p>Our story began</p>
+    <!-- 1. Our Story -->
+    <section class="zigzag-item fade-in">
+      <img src="assets/image1.jpeg" alt="Our Story — Nikhil & Pooja" loading="lazy" />
+      <div class="text">
+        <h2>Our Story</h2>
+        <p>From the moment we met — short, heartfelt copy here. (Replace with your story.)</p>
       </div>
-    </div>
-    <div class="milestone-point milestone-long" data-progress="0.5">
-      <div class="milestone-text">
-        <h2>The Engagement</h2>
-        <p>01.03.2024</p>
-        <p>She Said Yes!</p>
-      </div>
-    </div>
-    <div class="milestone-point" data-progress="1.0">
-      <div class="milestone-text">
-        <h2>The Wedding</h2>
-        <p>02.07.2026</p>
-        <p>Forever starts</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="zigzag-item reverse fade-in">
-    <img src="assets/image2.jpeg" alt="Wedding Info">
-    <div class="text">
-      <h2>Wedding Info</h2>
-      <p>Join us on July 2, 2026.</p>
-    </div>
-  </section>
-
-  <section class="zigzag-item fade-in">
-    <img src="assets/image3.jpeg" alt="Countdown">
-    <div class="text">
-      <h2>Countdown</h2>
-      <p>We're counting the days until we celebrate with you. Here's what to expect: warm summer skies, amazing food, music that moves you, and memories that last forever.</p>
-      <div class="countdown" id="countdown">
-        <div><span id="days">--</span><label>Days</label></div>
-        <div><span id="hours">--</span><label>Hours</label></div>
-        <div><span id="minutes">--</span><label>Minutes</label></div>
-        <div><span id="seconds">--</span><label>Seconds</label></div>
+    <!-- 2. Wedding Info (reverse layout) -->
+    <section class="zigzag-item reverse fade-in">
+      <img src="assets/image2.jpeg" alt="Wedding information" loading="lazy" />
+      <div class="text">
+        <h2>Wedding Info</h2>
+        <p>Join us on July 2, 2026. Venue details and brief notes go here.</p>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- 3. Countdown -->
+    <section class="zigzag-item fade-in">
+      <img src="assets/image3.jpeg" alt="Countdown — celebration" loading="lazy" />
+      <div class="text">
+        <h2>Countdown</h2>
+        <p>We're counting the days until we celebrate with you.</p>
+
+        <div class="countdown" id="countdown">
+          <div><span id="days">--</span><label>Days</label></div>
+          <div><span id="hours">--</span><label>Hours</label></div>
+          <div><span id="minutes">--</span><label>Minutes</label></div>
+          <div><span id="seconds">--</span><label>Seconds</label></div>
+        </div>
+
+        <div class="date-box">
+          Wedding Date: <strong>2 July 2026</strong>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <p class="signature-note">A formal invitation will follow...</p>

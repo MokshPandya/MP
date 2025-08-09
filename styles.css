@@ -1,41 +1,22 @@
-/* Global Styles */
+/* Basic / typography */
 body {
   font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
-  background: #fff;
   color: #333;
+  background: #fff;
 }
 
-h1, h2, h3 {
-  margin: 0;
-}
-
-h1 {
-  font-family: 'Dancing Script', cursive;
+h1 { 
+  font-family: 'Playfair Display', serif;
   font-size: 3rem;
   color: #b9475e;
+  margin: 0;
 }
+h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin: 0.4rem 0; }
+h3 { color: #666; margin: 0.25rem 0 0; }
 
-h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  margin-top: 0.5rem;
-  color: #222;
-}
-
-h3 {
-  font-size: 1.5rem;
-  color: #666;
-}
-
-p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #555;
-}
-
-/* Header Banner */
+/* Header */
 .top-banner {
   text-align: center;
   padding: 3rem 1rem;
@@ -43,34 +24,12 @@ p {
   border-bottom: 1px solid #f0e0e2;
 }
 
-/* Hero Video */
-.hero {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
-}
+/* Hero */
+.hero { position: relative; height: 100vh; overflow: hidden; }
+.hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hero::after { content:""; position:absolute; inset:0; background: rgba(0,0,0,0.2); }
 
-.hero-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-/* Zigzag Sections */
+/* Zigzag layout */
 .zigzag-item {
   display: flex;
   flex-direction: column;
@@ -80,190 +39,59 @@ p {
   max-width: 1200px;
   margin: 0 auto;
 }
-
 .zigzag-item img {
   width: 100%;
   max-width: 600px;
   border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
 }
+.zigzag-item .text { max-width: 600px; text-align: center; }
+.zigzag-item.reverse { flex-direction: column-reverse; }
 
-.zigzag-item .text {
-  max-width: 600px;
-  text-align: center;
-}
-
-.zigzag-item .text h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
-}
-
-.zigzag-item.reverse {
-  flex-direction: column-reverse;
-}
-
-/* Timeline Section */
-.timeline-wrapper {
-  position: relative;
-  width: 100%;
-  height: 300px;
-  margin-top: 40px;
-}
-
-#walker {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: #d69e63; /* warm gold/bronze */
-  border-radius: 50%;
-  box-shadow: 0 0 6px rgba(0,0,0,0.3);
-  z-index: 10;
-  transition: left 0.2s linear, top 0.2s linear;
-  pointer-events: none;
-}
-
-.milestone-point {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  border: 2px solid #d69e63;
-  border-radius: 12px;
-  padding: 10px;
-  min-width: 160px;
-  z-index: 5;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-}
-
-.milestone-point.active {
-  background-color: #f5e8dc;
-  border-color: #b37b50;
-}
-
-.milestone-text h2 {
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 4px;
-}
-
-.milestone-long {
-  top: calc(50% + 50px); /* Adjust if it overlaps */
-}
-
-
-/* Countdown Section */
+/* Countdown */
 .countdown {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
-
 .countdown div {
   background: #fff;
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   text-align: center;
 }
+.countdown span { display:block; font-size:2rem; font-weight:700; color:#b9475e; }
+.countdown label { font-size:0.85rem; color:#555; margin-top:0.35rem; display:block; }
 
-.countdown span {
-  display: block;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #b9475e;
+.date-box {
+  margin-top: 1rem;
+  display:inline-block;
+  background:#fff3f5;
+  padding:0.8rem 1.2rem;
+  border-radius:8px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.06);
+  font-weight:600;
 }
 
-.countdown label {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  color: #555;
-}
+/* Fade-in utility */
+.fade-in { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+.fade-in.visible { opacity: 1; transform: none; }
 
 /* Footer */
-footer {
-  text-align: center;
-  padding: 2rem;
-  background-color: #fff3f5;
-  font-style: italic;
-}
+footer { text-align:center; padding:2rem; background:#fff3f5; font-style:italic; }
 
-/* Responsive Styles */
+/* Desktop layout: true zigzag */
 @media (min-width: 769px) {
-  .zigzag-item {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .zigzag-item.reverse {
-    flex-direction: row-reverse;
-  }
-
-  .zigzag-item .text {
-    text-align: left;
-  }
+  .zigzag-item { flex-direction: row; justify-content: space-between; align-items: center; }
+  .zigzag-item.reverse { flex-direction: row-reverse; }
+  .zigzag-item .text { text-align: left; }
 }
 
+/* Mobile tweaks */
 @media (max-width: 768px) {
-  .hero {
-    height: 50vh;
-  }
-
-  .timeline-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    padding: 2rem 1rem;
-    position: static;
-  }
-
-  #timelineSVG,
-  #walker {
-    display: none;
-  }
-
-  .milestone-point {
-    position: static;
-    width: auto;
-    height: auto;
-    margin-bottom: 1.5rem;
-    box-shadow: none;
-    border: none;
-    cursor: default;
-  }
-
-  .milestone-text {
-    position: static;
-    width: 100%;
-    max-width: 400px;
-    padding: 1rem;
-    border-left: 4px solid #b9475e;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    opacity: 1 !important;
-    pointer-events: auto;
-    transform: none;
-    text-align: center;
-  }
-
-  .milestone-text h2 {
-    font-size: 1.1rem;
-  }
-
-  .milestone-text p {
-    font-size: 0.9rem;
-  }
-
-  .countdown {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-
-  .countdown div {
-    padding: 1rem;
-  }
-
-  .countdown span {
-    font-size: 1.5rem;
-  }
+  .hero { height: 50vh; }
+  .countdown { grid-template-columns: repeat(2, 1fr); }
+  .countdown span { font-size: 1.5rem; }
 }

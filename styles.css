@@ -225,15 +225,6 @@ h3 {
   transform: none; 
 }
 
-
-
-
-
-
-
-
-
-
 /* Footer */
 .footer-banner {
   text-align: center;
@@ -267,16 +258,6 @@ h3 {
   margin: 0 auto;
   opacity: 0.6;
 }
-
-
-
-
-
-
-
-
-
-
 
 /* Desktop layout: true zigzag */
 @media (min-width: 769px) {

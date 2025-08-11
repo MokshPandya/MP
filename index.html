@@ -9,10 +9,13 @@
 </head>
 <body>
   <header class="top-banner">
-    <h1>We're Getting Married</h1>
-    <h2>Nikhil & Pooja</h2>
-    <h3>02.07.2026</h3>
-  </header>
+  <div class="header-decoration">✦</div> <!-- Simple decorative star or flourish -->
+  <h1>We're Getting Married</h1>
+  <h2>Nikhil &amp; Pooja</h2>
+  <hr class="divider" />
+  <h3>02.07.2026</h3>
+</header>
+
 
   <main>
     <!-- Hero -->
@@ -23,10 +26,10 @@
     </section>
 
     <!-- 1. Our Story -->
-    <section class="zigzag-item fade-in">
+    <section class="zigzag-item fade-in our-story">
       <img src="assets/image1.jpeg" alt="Our Story — Nikhil & Pooja" loading="lazy" />
       <div class="text">
-        <h2>Our Story</h2>
+        <h4>Our Story</h4>
         <div class="text-box">
           <p>WE MET</p>
         <p>AUGUST 2017</p>
@@ -37,7 +40,7 @@
         </div>
         <div class="text-box">
           <p>WEDDING</p>
-        <p>JULY 2nd 2026</p>
+        <p>JULY 2026</p>
         </div>
       </div>
     </section>
@@ -46,22 +49,23 @@
     <section class="zigzag-item reverse fade-in">
       <img src="assets/image2.jpeg" alt="Wedding information" loading="lazy" />
       <div class="text">
-        <h2>DEAR FAMILY & FRIENDS</h2>
-        <p>
-        We’re thrilled to announce that
-        we’re getting married! Our big
-        day is fast approaching, and we
-        can't wait to celebrate with the
-        people who mean the most to us.
-        It will be a day filled with
-        laughter, joy, and the beginning
-        of something truly special. More
-        details will follow soon, but for
-        now, please save the date — we’d
-        love for you to join us as we
-        begin this new chapter together!</p>
-        <br><br><br>
-        <p> With love,</p>
+        <h5>DEAR FAMILY & FRIENDS</h5>
+        <p class="justified">
+          We’re thrilled to announce that
+          we’re getting married! Our big
+          day is fast approaching, and we
+          can't wait to celebrate with the
+          people who mean the most to us.
+          It will be a day filled with
+          laughter, joy, and the beginning
+          of something truly special. More
+          details will follow soon, but for
+          now, please save the date — we’d
+          love for you to join us as we
+          begin this new chapter together!
+        </p>
+        <br>
+        <p>With love,</p>
         <div class="signature">
           <p>Nikhil & Pooja</p>
         </div>
@@ -69,11 +73,11 @@
     </section>
 
     <!-- 3. Countdown -->
-    <section class="zigzag-item fade-in">
+    <section class="zigzag-item fade-in countdown-section">
       <img src="assets/image3.jpeg" alt="Countdown — celebration" loading="lazy" />
       <div class="text">
         <h2>Countdown</h2>
-        <p>We're counting the days until we celebrate with you.</p>
+        <p>Counting the days until we celebrate with you!</p>
 
         <div class="countdown" id="countdown">
           <div><span id="days">--</span><label>Days</label></div>
@@ -89,9 +93,10 @@
     </section>
   </main>
 
-  <footer>
-    <p class="signature-note">A formal invitation will follow...</p>
-  </footer>
+  <footer class="footer-banner">
+  <p class="signature-note">A formal invitation will follow...</p>
+  <hr class="footer-divider" />
+</footer>
 
   <script src="script.js"></script>
 </body>

@@ -54,6 +54,19 @@ h3 {
   text-transform: uppercase;
 }
 
+.top-banner h2 .name-part {
+  display: inline; /* Desktop: all on one line */
+}
+
+@media (max-width: 768px) {
+  .top-banner h2 .name-part {
+    display: block; /* Mobile: stack vertically */
+  }
+  .top-banner h2 {
+    text-align: center; /* Keep centered */
+  }
+}
+
 .top-banner hr.divider {
   width: 75px;
   border: none;
